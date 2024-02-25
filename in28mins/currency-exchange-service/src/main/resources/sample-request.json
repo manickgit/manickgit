@@ -1,0 +1,19 @@
+[
+	{
+		"id":"101",
+		"name":"manick",
+		"description":"This is sample",
+		"flag": true,
+		"nullVal": null,
+		"numtest":2
+	},
+	{
+		"id":"102",
+		"name":"Raj",
+		"description":"This is sample",
+		"flag": true,
+		"nullVal": null,
+		"numtest":2
+	}
+	
+]

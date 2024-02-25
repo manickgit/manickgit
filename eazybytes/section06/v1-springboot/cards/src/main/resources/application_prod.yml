@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to Cards related Prod APIs"
+  contactDetails:
+    name: "Prod owner - Prod"
+    email: "cards.prod@eazybank.com"
+  callSupport:
+    - (111) 111-1111
+    - (111) 111-1112

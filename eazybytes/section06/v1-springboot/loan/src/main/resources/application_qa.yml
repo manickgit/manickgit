@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+build:
+  version: "2.0"
+
+loans:
+  message: "Welcome to loans related QA APIs"
+  contactDetails:
+    name: "QA User - QA"
+    email: "loans.qa@eazybank.com"
+  callSupport:
+    - (222) 222-4444
+    - (222) 222-4445

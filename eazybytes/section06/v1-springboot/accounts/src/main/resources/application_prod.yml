@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related Prod APIs"
+  contactDetails:
+    name: "Manick MR - Admin"
+    email: "memadmin@eazybank.com"
+  onCallSupport:
+    - (555) 555-7777
+    - (555) 523-8888

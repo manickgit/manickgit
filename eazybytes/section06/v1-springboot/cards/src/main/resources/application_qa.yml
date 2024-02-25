@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to cards related QA APIs"
+  contactDetails:
+    name: "QA User - QA"
+    email: "cards.qa@eazybank.com"
+  callSupport:
+    - (222) 222-2222
+    - (222) 222-2223
