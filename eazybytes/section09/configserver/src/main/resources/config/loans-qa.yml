@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+loans:
+  message: "Welcome to EazyBank accounts related QA APIs"
+  contactDetails:
+    name: "Manick QA - QA"
+    email: "memqa@eazybank.com"
+  callSupport:
+    - (555) 555-3333
+    - (555) 523-4444

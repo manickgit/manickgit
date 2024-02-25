@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to Cards related QA APIs"
+  contactDetails:
+    name: "QA User - QA"
+    email: "cards.qa@eazybank.com"
+  callSupport:
+    - (222) 222-4444
+    - (222) 222-4445
