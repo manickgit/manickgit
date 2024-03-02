@@ -7,7 +7,8 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          #enabled: true # For default routes
+          enabled: false
           lower-case-service-id: true
 
 management:
@@ -27,3 +28,9 @@ info:
     name: "gatewayserver"
     description: "Gateway server for Eazy Bank microservices application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      eazybytes:
+        gatewayserver: DEBUG
