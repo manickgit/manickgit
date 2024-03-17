@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+cards:
+  message: "Welcome to Eazybank cards related local APIs"
+  contactDetails:
+    name: "Developer - Dev"
+    email: "cards.dev@eazybank.com"
+  callSupport:
+    - (333) 333-3333
+    - (333) 333-3334
