@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to EazyBank accounts related Prod APIs"
+  contactDetails:
+    name: "Manick MR - Admin"
+    email: "prod.accounts@eazybank.com"
+  onCallSupport:
+    - (555) 555-7777
+    - (555) 523-8888
