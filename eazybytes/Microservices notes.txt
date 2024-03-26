@@ -18,3 +18,65 @@ docker run -d -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13
 state
 -----
 fCXZvugCRE5wudEU
+
+
+Kubectl
+---------
+kubectl config get-contexts
+
+kubectl config get-clusters
+
+kubectl config delete-cluster docker-desktop
+
+kubectl config delete-context docker-desktop
+
+kubectl config use-context rancher-desktop
+
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+C:\ps\Tech\microservices\ms-course\eazybytes\k8s>kubectl apply -f dashboard-adminuser.yaml
+
+C:\ps\Tech\microservices\ms-course\eazybytes\k8s>kubectl apply -f cluster-rolebinding.yaml
+
+kubectl -n kubernetes-dashboard create token admin-user
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IkZFcTVpSVBEWkszMUxiS3p5akZiOUhBNUpmZTRFc3NrZGlpSGgzTnFVSncifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNzExNDQyOTQyLCJpYXQiOjE3MTE0MzkzNDIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiZjBiN2Q2MjAtMThmNS00YjQ3LWE1YWMtNWUxMTkyYmVhNzYzIn19LCJuYmYiOjE3MTE0MzkzNDIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.CEDn4ssseVTfP-dVyVbp3D_mtMxrq5voJiWDtlWIo0PpKXPg5jiGalsZzKM2zn_B9mAKtly6kZFBG9Ng-YnXrvAnXt8seoHehnHf_Akv8rAlYvxUAxlA7qLFSe7h8vQQ62d0aq8awzlClWETHypOsglQ1tRPPxQO65Nvnxj7dJ4ZlbpSceCLkIcnhY6t_4mpQL_58WGJrMsSFNWAUZg7e-UIvbn3nBJE61tnwhubRHg4ZoNjp9RQG2p2BvfRzU_mN23-Igy_Rr5gOgSveoFAzQIFJw6ziwn_O1sUYAvhb6CBf6pg6CeEXl6Ai8KRhPdtBwSmFVDvv3mt8FYBzDbDOg
+
+kubectl apply -f secret.yaml
+
+-----------
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+
+
+------------
+WIndows - to get base64decoded values
+----------
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklrWkZjVFZwU1ZCRVdrc3pNVXhpUzNwNWFrWmlPVWhCTlVwbVpUUkZjM05yWkdscFNHZ3pUbkZWU25jaWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUpyZFdKbGNtNWxkR1Z6TFdSaGMyaGliMkZ5WkNJc0ltdDFZbVZ5Ym1WMFpYTXVhVzh2YzJWeWRtbGpaV0ZqWTI5MWJuUXZjMlZqY21WMExtNWhiV1VpT2lKaFpHMXBiaTExYzJWeUlpd2lhM1ZpWlhKdVpYUmxjeTVwYnk5elpYSjJhV05sWVdOamIzVnVkQzl6WlhKMmFXTmxMV0ZqWTI5MWJuUXVibUZ0WlNJNkltRmtiV2x1TFhWelpYSWlMQ0pyZFdKbGNtNWxkR1Z6TG1sdkwzTmxjblpwWTJWaFkyTnZkVzUwTDNObGNuWnBZMlV0WVdOamIzVnVkQzUxYVdRaU9pSm1NR0kzWkRZeU1DMHhPR1kxTFRSaU5EY3RZVFZoWXkwMVpURXhPVEppWldFM05qTWlMQ0p6ZFdJaU9pSnplWE4wWlcwNmMyVnlkbWxqWldGalkyOTFiblE2YTNWaVpYSnVaWFJsY3kxa1lYTm9ZbTloY21RNllXUnRhVzR0ZFhObGNpSjkuZHJTNk9MTkhpSDZ0VGM2VkZUQWYyZ2J3Sm9QLXhjeEhfMjVYMzZqb0tubXlfYXdJajB1ajRMZ2E3M0FLVzdubzN1TXJFUlZxb2VQQng3ajR2MEN2Zm9vNnVObW1WbTd4WU9SYlVMV0lKM2Z0aUlQZnVVOWt5ekJsUmdFb2oyYjViR0ZkYW42ekJVeThDWGlTWEtSQkZ6UjhkZkd4cnJYVk9JaXkwam8xbEFfTXByNnJkTjBZY1hheEhDR0NRbmxtWkEyaW8tdG1XdWdRVkpybjktYWNTVm9OTVFxcGdyQ0ZMQVRiOGlnTjFabWVpQnFzUW9rT3NUeGFBNFlBNU13WXRFTUswc2JvMjRFbUdzbGs3TU0zb3ZWT0wtWC1IQzU0SnQxbzU3N2lzWDhRRHEzQ1pHMDFKUUUyd09MMGRIS1ZUUEFBZW80MFoyLUUyU3RsQkpEMmtn'))
+
+get the response and use it login
+
+Kubernetes Notes
+---------------
+kubectl get deployments
+kubectl get services
+kubectl get replicaset
+
+kubectl apply -f configserver.yml
+kubectl apply -f configmaps.yml
+
+kubectl delete pod accounts-deployment-64946d984f-2rl9w
+
+kubectl get events --sort-by=.metadata.creationTimestamp
+
+kubectl scale deployment accounts-deployment --replicas=1
+
+Invalid image
+--------------
+kubectl set image deployment gatewayserver-deployment gatewayserver=manickaraj/gatewayserver:s111 --record
+
+kubectl set image deployment gatewayserver-deployment gatewayserver=manickaraj/gatewayserver:s11 --record
